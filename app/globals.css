@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide default cursor */
+html,
+* {
+  cursor: none;
+}
+
+/* Optional: Add hover states for specific elements */
+a,
+button,
+.cursor-hover {
+  position: relative;
+}
+
 @keyframes glitch {
   0% {
     background-position: 0 0;
