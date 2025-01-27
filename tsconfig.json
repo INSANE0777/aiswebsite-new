@@ -22,6 +22,17 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx",
+    ".next/types/**/*.ts",
+    "components/home/main.jsx",
+    "components/CustomCursor.jsx",
+    "components/home/ParticleBackground.jsx",
+    "components/home/LandingAnimation.jsx",
+    "components/GlassNavbar.jsx"
+  ],
   "exclude": ["node_modules"]
 }

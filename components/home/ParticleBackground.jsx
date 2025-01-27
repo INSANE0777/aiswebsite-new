@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
-const ParticleBackground: React.FC = () => {
+const ParticleBackground = () => {
   useEffect(() => {
     const canvas = document.createElement("canvas");
     canvas.style.position = "fixed";
@@ -17,13 +17,13 @@ const ParticleBackground: React.FC = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const particles: Particle[] = [];
+    const particles = [];
     const PARTICLE_COLORS = ["#E8E8E8", "#D3D3D3", "#C0C0C0", "#A9A9A9"];
-    const MOUSE_RADIUS = 150; // Increased interaction radius
+    const MOUSE_RADIUS = 100; // Increased interaction radius
     let mouseX = -MOUSE_RADIUS;
     let mouseY = -MOUSE_RADIUS;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
     };
@@ -31,12 +31,12 @@ const ParticleBackground: React.FC = () => {
     window.addEventListener("mousemove", handleMouseMove);
 
     class Particle {
-      x: number;
-      y: number;
-      velX: number;
-      velY: number;
-      size: number;
-      color: string;
+      x;
+      y;
+      velX;
+      velY;
+      size;
+      color;
 
       constructor() {
         this.reset();
@@ -69,7 +69,7 @@ const ParticleBackground: React.FC = () => {
         if (this.y < 0 || this.y > canvas.height) this.velY *= -1;
       }
 
-      draw(ctx: CanvasRenderingContext2D) {
+      draw(ctx) {
         ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);

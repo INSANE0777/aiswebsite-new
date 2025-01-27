@@ -8,12 +8,12 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
+    const moveCursor = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleHover = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
+    const handleHover = (e) => {
+      const target = e.target;
       setIsHovering(
         target.tagName === "A" ||
           target.tagName === "BUTTON" ||
